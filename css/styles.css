@@ -467,3 +467,307 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* Process Flow Styles */
+.process-flow {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    gap: 1rem;
+}
+
+.flow-step {
+    flex: 1;
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
+
+.flow-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    z-index: 1;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+}
+
+.flow-step h4 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.flow-step p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.highlight-text {
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.value-proposition {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.value-proposition h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.value-proposition p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--dark-color);
+}
+
+/* Impact Metrics */
+.impact-metrics {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 0;
+    margin: 3rem 0;
+}
+
+.impact-metrics .section-title h2 {
+    color: white;
+}
+
+.impact-metrics .section-title h2::after {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.metric-card {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.metric-number {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.metric-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.metric-description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .process-flow {
+        flex-direction: column;
+    }
+    
+    .flow-step:not(:last-child)::after {
+        content: '↓';
+        right: 50%;
+        top: auto;
+        bottom: -15px;
+        transform: translateX(50%);
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    .metric-number {
+        font-size: 2.5rem;
+    }
+}
+
+/* ICE Explanation */
+.ice-explanation {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 4rem 0;
+    margin: 3rem 0;
+}
+
+.ice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.ice-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.ice-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.ice-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.ice-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.ice-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.ice-scale {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.ice-scale .low {
+    color: #e74c3c;
+}
+
+.ice-scale .medium {
+    color: #f39c12;
+}
+
+.ice-scale .high {
+    color: #27ae60;
+}
+
+.ice-formula {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    margin-top: 2rem;
+}
+
+.ice-formula h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.ice-formula p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.ice-note {
+    font-size: 1rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* ICE Breakdown in Categories */
+.ice-breakdown {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.ice-total {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.ice-description {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* ICE Color Coding */
+.ice-score-10 { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+.ice-score-9 { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+.ice-score-8 { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+.ice-score-7 { background: linear-gradient(135deg, #f39c12, #f1c40f); }
+.ice-score-6 { background: linear-gradient(135deg, #f39c12, #f1c40f); }
+.ice-score-5 { background: linear-gradient(135deg, #f39c12, #f1c40f); }
+.ice-score-4 { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.ice-score-3 { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.ice-score-2 { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.ice-score-1 { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ice-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .ice-scale {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
